@@ -1,0 +1,149 @@
+body {
+  margin: 0;
+}
+
+.body {
+  width: 100vw;
+  height: 100vh;
+  background-color: #BCBCBC;
+  position: relative;
+  transition: all 1s;
+}
+
+.body > * {
+  font-family: 'Lato', sans-serif;
+}
+
+.body .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: radial-gradient(black 15%, transparent 16%) 0 0, radial-gradient(black 15%, transparent 16%) 8px 8px, radial-gradient(rgba(255, 255, 255, 0.1) 15%, transparent 20%) 0 1px, radial-gradient(rgba(255, 255, 255, 0.1) 15%, transparent 20%) 8px 9px;
+  background-color: #282828;
+  background-size: 16px 16px;
+  opacity: 0.5;
+}
+
+.body.dc {
+  background: url(dc2.jpg) center center no-repeat;
+  background-size: cover;
+}
+
+.body.marvel {
+  background: url(marvel.jpg) center center no-repeat;
+  background-size: cover;
+}
+
+.body.millarworld {
+  background: url(millarworld.jpg) center center no-repeat;
+  background-size: cover;
+}
+
+.body .parent-tabs {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.body .parent-tabs .tabs {
+  display: -webkit-flex;
+  color: #000;
+}
+
+.body .parent-tabs .tabs .tab {
+  margin-right: 2px;
+  cursor: pointer;
+  transition: all 0.2s;
+  width: 33.33%;
+  text-align: center;
+}
+
+.body .parent-tabs .tabs .tab.custom-shape {
+  position: relative;
+  text-align: center;
+  padding: 12px;
+  margin-bottom: 6px;
+  height: 60px;
+  /*width: 200px;*/
+}
+
+.body .parent-tabs .tabs .tab.custom-shape span {
+  color: black;
+  z-index: 10;
+  height: 10px;
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.body .parent-tabs .tabs .tab.custom-shape:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 51%;
+  background: lightgray;
+  -webkit-transform: skew(0deg, 6deg);
+  -moz-transform: skew(0deg, 6deg);
+  -ms-transform: skew(0deg, 6deg);
+  -o-transform: skew(0deg, 6deg);
+  transform: skew(0deg, 6deg);
+  transition: all 0.7s;
+}
+
+.body .parent-tabs .tabs .tab.custom-shape:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 50%;
+  background: lightgray;
+  -webkit-transform: skew(0deg, -6deg);
+  -moz-transform: skew(0deg, -6deg);
+  -ms-transform: skew(0deg, -6deg);
+  -o-transform: skew(0deg, -6deg);
+  transform: skew(0deg, -6deg);
+  transition: all 0.7s;
+}
+
+.body .parent-tabs .tabs .tab.custom-shape.active span {
+  color: white;
+}
+
+.body .parent-tabs .tabs .tab.custom-shape.active:before, .body .parent-tabs .tabs .tab.custom-shape.active:after {
+  background-color: #03A8F3;
+  color: #fff;
+}
+
+.body .parent-tabs .tabs .tab.custom-shape:hover:before, .body .parent-tabs .tabs .tab.custom-shape:hover:after {
+  background-color: #5fc8f4;
+}
+
+.body .parent-tabs .content {
+  margin-top: -20px;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: all 0.2s;
+}
+
+.body .parent-tabs .content .tab-content {
+  padding: 0;
+  height: 0;
+  background-color: #fff;
+  transition: padding 0.8s;
+  overflow: hidden;
+  opacity: 0;
+}
+
+.body .parent-tabs .content .tab-content.active {
+  padding: 30px 15px 30px 15px;
+  height: 100%;
+  opacity: 1;
+}

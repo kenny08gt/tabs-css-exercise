@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="tabs.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Super Cool Tabs!</title> 
+</head>
+<body>
+    <div class="body dc">
+        <div class="overlay"></div>
+        <div class="parent-tabs">
+            <div class="tabs">
+                <div class="tab active custom-shape" data-tab="dc"><span>DC</span></div>
+                <div class="tab custom-shape" data-tab="marvel"><span>Marvel</span></div>
+                <div class="tab custom-shape" data-tab="millarworld"><span>Millarworld</span></div>
+            </div>
+            <div class="content">
+                <div id="dc" class="tab-content active">
+                    <p>
+                        DC Comics es una editorial de cómics estadounidense. Forma parte de DC Entertainment,1​ una de las empresas que conforman Warner Bros. Entertainment, la cual a su vez es propiedad de Time Warner. Fue fundada en 1934 bajo el nombre National Allied Publications, para luego tomar el nombre de DC Comics en 1937. Las iniciales «DC» son una abreviatura de Detective Comics, uno de los primeros títulos emblemáticos de la compañía.
+                    </p>
+                    <p>
+                        Entre algunos de sus personajes más emblemáticos se encuentran Superman, Batman, la Mujer Maravilla, Flash, Linterna Verde, Aquaman, Flecha Verde y grupos de héroes como Liga de la Justicia o Los Jóvenes Titanes. Material no relacionado a su universo heroico incluye a Watchmen, V de Vendetta, The Sandman y muchos otros, generalmente bajo subsellos editoriales como Vertigo o Milestone Media. Su sede principal estuvo situada históricamente en la ciudad de Nueva York, pero desde 2015 mudaron sus oficinas a la ciudad de Burbank (California).
+                    </p>
+                </div>
+                <div id="marvel" class="tab-content ">
+                    <p>
+                        Marvel Worldwide, Inc. es una editorial de cómics estadounidense creada en 1939, inicialmente con el nombre de Timely Comics. Entre sus personajes emblemáticos del género superheroico se encuentran Spider-Man, Capitán América, Iron Man, Hulk, Thor, Deadpool, Avengers, Wolverine, Daredevil, y los X-Men, entre otros.
+                    </p>
+                    <p>
+                        A partir de los años 70, la compañía se posicionó como una de las principales editoriales de cómics del país. En agosto de 2009, la multinacional Walt Disney compró Marvel Entertainment por cuatro mil millones de dólares.
+                    </p> 
+                </div>
+                <div id="millarworld" class="tab-content">
+                    <p>
+                        Millarworld Limited is a company that was founded in 2013 by Scottish comic book writer Mark Millar as a creator-owned line.[1] The imprint is best known for publishing the books Wanted, Chosen, The Unfunnies, Kick-Ass and War Heroes.
+                    </p>
+                    <p>
+                        Wanted, published by Top Cow Productions, was loosely adapted into a feature film by Universal Pictures, released on 27 June 2008.[2] Chosen, published by Dark Horse Comics, was described by Millar as a sequel to the Bible, and has been optioned by Sony Pictures. The Unfunnies was a funny animal horror story published by Avatar Press. Kick-Ass, which was illustrated by John Romita, Jr. and published by Marvel, was adapted into a film of the same name by Matthew Vaughn, and released in the United Kingdom on 26 March 2010 and the United States on 16 April.
+                    </p>
+                    <p>
+                        On 7 August 2017, Millarworld was acquired by the American streaming media company Netflix.
+                    </p> 
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+    <script>
+        $(".tab").on("click",function(){
+            var target = $(this).data("tab");
+
+            $(".content .tab-content.active").removeClass("active");
+            $(".tabs .tab.active").removeClass("active");
+
+            setTimeout(function(){
+                $("#"+target).addClass("active");
+            }, 500);
+
+            $(this).addClass("active"); 
+            $(".body").removeClass().addClass("body").addClass(target);
+        });
+    </script>
+</body>
+</html>

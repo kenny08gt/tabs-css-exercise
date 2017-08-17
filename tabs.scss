@@ -1,0 +1,141 @@
+body{
+    margin: 0;
+}
+.body{
+    width: 100vw;
+    height: 100vh;
+    background-color: #BCBCBC;
+    position: relative;
+    transition: all 1s; 
+    > * {
+        font-family: 'Lato', sans-serif;
+    }
+    .overlay{
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        background:
+        radial-gradient(black 15%, transparent 16%) 0 0,
+        radial-gradient(black 15%, transparent 16%) 8px 8px,
+        radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 0 1px,
+        radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 8px 9px;
+        background-color:#282828;
+        background-size:16px 16px;
+        opacity: 0.5;
+    }
+    &.dc{
+        background: 
+        url(dc2.jpg) center center no-repeat;
+        background-size: cover;
+    }
+    &.marvel{
+        background: 
+        url(marvel.jpg) center center no-repeat;
+        background-size: cover;
+    }
+    &.millarworld{
+        background: 
+        url(millarworld.jpg) center center no-repeat;
+        background-size: cover;
+    }
+    .parent-tabs{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate( -50%, -50%);
+        .tabs{
+            display: -webkit-flex;
+            color: #000;
+            .tab{
+                margin-right: 2px;
+                cursor: pointer;
+                transition: all 0.2s;
+                width: 33.33%;
+                text-align: center;
+                &.custom-shape{
+                    position: relative;
+                    text-align: center;
+                    padding: 12px;
+                    margin-bottom: 6px;
+                    height: 60px;
+                    /*width: 200px;*/
+                    span{
+                        color: black;
+                        z-index: 10;
+                        height: 10px;
+                        width: 100%;
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                    }
+                    &:before{
+                        content: '';
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        height: 100%;
+                        width: 51%;
+                        background: lightgray;
+                        -webkit-transform: skew(0deg, 6deg);
+                        -moz-transform: skew(0deg, 6deg);
+                        -ms-transform: skew(0deg, 6deg);
+                        -o-transform: skew(0deg, 6deg);
+                        transform: skew(0deg, 6deg);
+                        transition: all 0.7s;
+                    }
+                    &:after{
+                        content: '';
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                        height: 100%;
+                        width: 50%;
+                        background: lightgray;
+                        -webkit-transform: skew(0deg, -6deg);
+                        -moz-transform: skew(0deg, -6deg);
+                        -ms-transform: skew(0deg, -6deg);
+                        -o-transform: skew(0deg, -6deg);
+                        transform: skew(0deg, -6deg);
+                        transition: all 0.7s;
+                    }
+                    &.active{
+                        span{
+                            color: white;
+                        }
+                        &:before, &:after{
+                            background-color: #03A8F3;  
+                            color: #fff;
+                        }
+                    }
+                    &:hover{
+                        &:before, &:after{
+                            background-color: #5fc8f4;
+                        }
+                    }
+                }
+            }
+        }
+        .content{
+            margin-top: -20px;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: all 0.2s;
+            .tab-content{
+                padding: 0;
+                height: 0;
+                background-color: #fff;
+                transition: padding 0.8s;
+                overflow: hidden;
+                opacity: 0;
+                &.active{
+                    padding: 30px 15px 30px 15px;
+                    height: 100%;
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}
